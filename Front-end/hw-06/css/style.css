@@ -436,7 +436,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: none;
-    color: var(--first-icon-color);
+    color: #afb1b8;
 
     transition: color 250ms var(--transition-effect), background-color 250ms var(--transition-effect);
 }
@@ -552,7 +552,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    color: var(--first-icon-color);
+    color: #afb1b8;
 
     transition: color 250ms var(--transition-effect), border 250ms var(--transition-effect);
 }
@@ -611,6 +611,10 @@ body {
     color: var(--footer-text-color);
 
     margin-bottom: 10px;
+}
+
+.footer-item > .link {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 /* FOOTER SOCIAL */
@@ -907,7 +911,7 @@ button.active {
     width: 30px;
     height: 30px;
     background-color: transparent;
-    border: 1px solid #999999;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -945,6 +949,7 @@ button.active {
     display: block;
     margin-bottom: 4px;
 }
+
 
 .modal-input-wrap {
     position: relative;
@@ -1006,7 +1011,7 @@ button.active {
 
 .modal-input::placeholder,
 .modal-text::placeholder {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.14;
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 0.5);
