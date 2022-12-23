@@ -1,0 +1,44 @@
+
+.btn-primary {
+    /* оформляем кнопку Замовити */
+    padding: 10px 32px;
+    background: var(--accent-color);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    color: var(--light-main-color);
+    /* курсор мыши при наведении*/
+    cursor: pointer;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+    &:hover {
+      /* цвет кнопки при наведении */
+      background: #188ce8;
+    }
+    
+    &:focus {
+      /* цвет кнопки при нажатии */
+      background: var(--accent-color);
+    }
+    
+    &:active {
+      /* цвет кнопки при нажатии */
+      background: #88c4f5;
+    }
+    
+  
+  }
+ 
+  .btn-modal {
+    padding: 10px 52px;
+  }

@@ -1,0 +1,47 @@
+/* наши особливості */
+
+.features {
+
+    &__list {
+      display: flex;
+      gap: 30px;
+    }
+    
+    &__item {
+      width: 270px;
+    }
+    
+    &__icons {
+      margin-bottom: 30px;
+      width: 270px;
+      height: 120px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      background-color: var(--light-gray);
+      border-radius: 4px;
+    }
+    
+    &__title {
+      /* заголовок в особенностях */
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.14;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-main-color);
+      margin-bottom: 10px;
+    }
+  
+    
+    &__text {
+      /* оформление списка Особенности  */
+      font-size: 14px;
+      line-height: 1.71;
+      letter-spacing: 0.03em;
+      color: var(--description-color);
+    }
+
+  }
+  
+  

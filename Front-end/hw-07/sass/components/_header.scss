@@ -1,0 +1,93 @@
+
+/* параметры секции header */
+.header {
+    border-bottom: 1px solid #ececec;
+  
+    &__container {
+      display: flex;
+    }
+  
+    &__nav {
+      border: 0px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    &__menu {
+      display: flex;
+      gap: 50px;
+      margin-left: 93px;
+    }
+
+    &__nav-contacts {
+      display: flex;
+      gap: 50px;
+      margin-left: auto;
+    }
+
+      /* стиль ссылкок шапка */
+  &__links,
+  &__contacts {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--text-main-color);
+    padding: 32px 0;
+    display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* цвет ссылок контактов шапка*/
+  &__contacts {
+    color: var(--description-color);
+    /* выравнивание иконок по вертикали */
+    display: flex;
+    align-items: center;
+  }
+
+    /* цвет ховера и текущ. ссылки*/
+    &__links:hover,
+    &__contacts:hover,
+    &__links--current {
+      position: relative;
+      color: var(--accent-color);
+    }
+
+    &__links--current::after {
+      display: inline-block;
+      content: "";
+      width: 100%;
+      height: 4px;
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      border-radius: 2px;
+      background-color: var(--accent-color);
+    }
+
+    &__links:focus {
+      color: green;
+    }
+    
+    &__links:active {
+      color: red;
+    }
+  
+  /* ховер телефона и конверта вместе со ссылками */
+  
+  &__contacts:hover &__icons {
+    fill: var(--accent-color);
+  }
+  
+  /* телефон и конверт  */
+  &__icons {
+    margin-right: 10px;
+  }
+  
+
+  }
+
+

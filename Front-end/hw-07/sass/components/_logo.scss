@@ -1,0 +1,28 @@
+
+
+.logo {
+    text-decoration: none;
+    font-family: "Raleway"; /* задаём шрифт и размер ЛОГО */
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: var(--logo);
+  
+    &__footer {
+      text-decoration: none;
+      display: block;
+      margin-bottom: 20px;
+    }
+    
+    &--accent {
+      /*  цвет левой части ЛОГО */
+      color: var(--accent-color);
+    }
+    
+    &--white {
+      /*  цвет правой части ЛОГО в подвале */
+      color: var(--light-main-color);
+    }
+  
+  }
