@@ -1,8 +1,7 @@
 .hero {
   background: #2f303a;
   padding: 200px 0;
-  background-image: linear-gradient(rgb(47, 48, 58, 0.4), rgb(47, 48, 58, 0.4)),
-    url("../images/bg-header.jpg");
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/bg-header.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
