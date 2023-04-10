@@ -28,39 +28,42 @@ gallery.insertAdjacentHTML('beforeend', galleryHTML);
 gallery.addEventListener('click', handleGalleryClick);
 
 function handleGalleryClick(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    let target = event.target;
+  let target = event.target;
 
-    if (target.nodeName !== "IMG") {
-        return
-    };
+  if (target.nodeName !== "IMG") {
+    return;
+  };
 
-    const lightbox = new SimpleLightbox('.gallery__item a', { 
-        captions: true, // включення підписів
-        captionsData: "alt", // зчитування підписів з атрибута alt
-        captionsDelay: 250, // затримка появи підпису
-        animationSpeed: 150, // швидкість анімації
-        loop: true, // зациклювання галереї
-        closeText: "Закрити", // текст на кнопці закриття
-        nextText: "Наступне", // текст на кнопці наступного зображення
-        prevText: "Попереднє", // текст на кнопці попереднього зображення
-        disableScroll: false, // заборона прокрутки сторінки при відкритті галереї
-        docClose: true, // закриття галереї при кліку на тло
-        swipeClose: true // закриття галереї при змаху пальцем на мобільних пристроях/ 
-    });
+  // const ImageSrc = target.dataset.source;
 
-    lightbox.open();
+  const lightbox = new SimpleLightbox('.gallery__item a', {
+    captions: true,
+    captionsData: "alt",
+    captionsDelay: 250,
+    loop: true,
+    bindToItems: true,
+    swipeClose: true,
+    history: true,
+    historyHash: "lightbox",
+    widthRatio: 0.8,
+    heightRatio: 0.9,
+    scaleImageToRatio: true,
+    enableZoom: true,
+    zoomFactor: 2,
+  });
 
-    const ImageSrc = target.dataset.source;
-    document.addEventListener('keydown', handleEscapePress);
+  lightbox.show();
 
-function handleEscapePress(event) {
+  document.addEventListener('keydown', handleEscapePress);
+
+  function handleEscapePress(event) {
     if (event.code !== 'Escape') {
-        return
+      return;
     };
 
     lightbox.close();
     document.removeEventListener('keydown', handleEscapePress);
-}
+  }
 }
