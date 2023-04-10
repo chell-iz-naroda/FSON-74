@@ -4,6 +4,10 @@ import { galleryItems } from './gallery-items.js';
 // console.log(galleryItems);
 const gallery = document.querySelector('.gallery');
 
+let isModalOpen = false;
+const lightbox = null;
+
+
 const galleryHTML = galleryItems.map(({preview, original, description}) => {
     return `
     <li class="gallery__item">
@@ -24,11 +28,20 @@ const galleryHTML = galleryItems.map(({preview, original, description}) => {
 
 gallery.insertAdjacentHTML('beforeend', galleryHTML);
 
-
 gallery.addEventListener('click', handleGalleryClick);
 
 function handleGalleryClick(event) {
   event.preventDefault();
+
+  if (isModalOpen) {
+    return;
+  }
+
+  if (lightbox !== null) {
+    lightbox.destroy();
+  }
+
+  isModalOpen = true;
 
   let target = event.target;
 
@@ -36,9 +49,9 @@ function handleGalleryClick(event) {
     return;
   };
 
-  // const ImageSrc = target.dataset.source;
+  const ImageSrc = target.dataset.source;
 
-  const lightbox = new SimpleLightbox('.gallery__item a', {
+    lightbox = new SimpleLightbox('.gallery__item a', {
     captions: true,
     captionsData: "alt",
     captionsDelay: 250,
@@ -54,6 +67,10 @@ function handleGalleryClick(event) {
     zoomFactor: 2,
   });
 
+  lightbox.on('close.simplelightbox', () => {
+    isModalOpen = false;
+  });
+
   lightbox.show();
 
   document.addEventListener('keydown', handleEscapePress);
@@ -64,6 +81,7 @@ function handleGalleryClick(event) {
     };
 
     lightbox.close();
+  
     document.removeEventListener('keydown', handleEscapePress);
   }
 }
