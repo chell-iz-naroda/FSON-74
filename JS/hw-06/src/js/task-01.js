@@ -21,12 +21,21 @@
 const items = document.querySelectorAll("li.item");
 console.log(`Number of categories: ${items.length}`);
 
+// items.forEach ((item) => {
+//     const itemHeading = item.querySelector("h2");
+//     const itemCategory = itemHeading.textContent;
+//     const itemElements = item.querySelectorAll("li");
+
+
+//     console.log (`Category: ${itemCategory}`);
+//     console.log (`Elements: ${itemElements.length}`);
+// })
+
 items.forEach ((item) => {
-    const itemHeading = item.querySelector("h2");
-    const itemCategory = itemHeading.textContent;
-    const itemElements = item.querySelectorAll("li");
+    const itemCategory = item.firstElementChild.textContent;
+    const itemElements = item.lastElementChild.childElementCount;
 
 
     console.log (`Category: ${itemCategory}`);
-    console.log (`Elements: ${itemElements.length}`);
+    console.log (`Elements: ${itemElements}`);
 })
